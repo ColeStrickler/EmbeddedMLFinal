@@ -9,6 +9,7 @@ print(info)
 # Access the training and testing sets
 train_data, test_data = dataset['train'], dataset['test']
 original_labels = info.features['label'].names
+
 audio = info.features['audio']
 
 
@@ -91,8 +92,8 @@ label_mapping = {
     'off': 'other',
     'stop': 'stop',
     'go': 'go',
-    '_silence_': 'other',
-    '_unknown_': 'other'
+    '_silence_': 'silence',
+    '_unknown_': 'unknown'
 }
 
 for old_name, new_name in label_mapping.items():
